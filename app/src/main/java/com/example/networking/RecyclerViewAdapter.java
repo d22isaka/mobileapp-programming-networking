@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -19,7 +20,8 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
     private OnClickListener onClickListener;
 
 
-    RecyclerViewAdapter(Context context, List<Mountain> items, OnClickListener onClickListener) {
+
+  public RecyclerViewAdapter(Context context, List<Mountain> items, OnClickListener onClickListener) {
         this.layoutInflater = LayoutInflater.from(context);
         this.items = items;
         this.onClickListener = onClickListener;
@@ -41,8 +43,10 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
 
     @Override
     public int getItemCount() {
+
         return items.size();
     }
+
 
 
 
@@ -63,11 +67,10 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
         }
     }
 
-    public void addData(List<Mountain> newdata) {
+    public void addData(List<Mountain> data) {
 
-        this.items=newdata;
+        this.items=data;
     }
-
 
 
     public interface OnClickListener {
