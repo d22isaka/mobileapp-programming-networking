@@ -2,12 +2,15 @@
 # Rapport
 
 Forked the app on Github.
-Added a RecyclerView to my layout and created a recyclerview_item to contain the items.
+Added a RecyclerView Widget to my layout and created a new LayoutFile recyclerview_item to represent a list item.
 
-Created a recyclerviewadapter class, instantiated an adapter in my mainActivity class.
+Created a new Java-class RecyclerViewItem to represent the item..
+
+Created a recyclerviewadapter class,Copied in the code example from the course-site.
+Declared and initialized an adapter in my mainActivity class.
 Added an ArrayList<Mountain> called mountainList 
 
-Creater a RecyclerViewItem class to hold objects.
+Activated internet-acces.
 
 Used the URL Json to get the data for the ArrayList.
 Most of my time on this project have been to identify issues. 
