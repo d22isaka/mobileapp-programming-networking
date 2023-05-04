@@ -45,6 +45,10 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
         return items.size();
     }
 
+    public interface OnClickListener {
+        void onClick(Mountain item);
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
@@ -68,8 +72,5 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
     }
 
 
-    public interface OnClickListener {
-        void onClick(Mountain item);
-    }
 
 }

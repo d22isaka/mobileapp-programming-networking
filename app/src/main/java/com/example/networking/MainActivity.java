@@ -20,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
-    private final String JSON_FILE = "mountains.json";
+   // private final String JSON_FILE = "mountains.json";
 
     private ArrayList<Mountain> mountainList;
     private RecyclerViewAdapter adapter;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         view.setLayoutManager(new LinearLayoutManager(this));
         view.setAdapter(adapter);
 
-        new JsonFile(this, this).execute(JSON_FILE);
+     //   new JsonFile(this, this).execute(JSON_FILE);
         new JsonTask(this).execute(JSON_URL);
 
     }
