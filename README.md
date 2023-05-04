@@ -1,37 +1,40 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Forked the app on Github.
+Added a RecyclerView to my layout and created a recyclerview_item to contain the items.
 
-_Du kan ta bort all text som finns sedan tidigare_.
+Created a recyclerviewadapter class, instantiated an adapter in my mainActivity class.
+Added an ArrayList<Mountain> called mountainList 
 
-## Följande grundsyn gäller dugga-svar:
+Creater a RecyclerViewItem class to hold objects.
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
+Used the URL Json to get the data for the ArrayList.
+Most of my time on this project have been to identify issues. 
+First my 'getItemCount' was null in RecyclerViewAdapter and I had no idea why.
+After som changes in MainActivity there were other issues. 
+Found out there was a typo in my URL. 
 
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
+
+Below code updated the RecycleView list with information from the Json url.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
+    public void onPostExecute(String json) {
+        Log.d("MainActivity", json);
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<Mountain>>() {
+        }.getType();
+        mountainList = gson.fromJson(json, type);
+
+
+        adapter.addData(mountainList);
+
+        adapter.notifyDataSetChanged();
     }
-}
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+Below image shows a list of mountains gathered from the url.
+When clicked the name appears in the bottom of the screen.
 
 ![](Screenshot1.png)
 
