@@ -9,6 +9,7 @@ public class RecyclerViewItem {
     private String title;
 
     private RecyclerViewItem adapter;
+
     public RecyclerViewItem(String title) {
         this.title = title;
     }

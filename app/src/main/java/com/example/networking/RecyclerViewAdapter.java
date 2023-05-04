@@ -20,19 +20,17 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
     private OnClickListener onClickListener;
 
 
-
-  public RecyclerViewAdapter(Context context, List<Mountain> items, OnClickListener onClickListener) {
+    public RecyclerViewAdapter(Context context, List<Mountain> items, OnClickListener onClickListener) {
         this.layoutInflater = LayoutInflater.from(context);
         this.items = items;
         this.onClickListener = onClickListener;
     }
 
 
-
     @NonNull
     @Override
 
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(layoutInflater.inflate(R.layout.recyclerview_item, parent, false));
     }
 
@@ -46,9 +44,6 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
 
         return items.size();
     }
-
-
-
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -69,7 +64,7 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
 
     public void addData(List<Mountain> data) {
 
-        this.items=data;
+        this.items = data;
     }
 
 

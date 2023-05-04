@@ -22,12 +22,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
     private final String JSON_FILE = "mountains.json";
 
-    private RecyclerView.ViewHolder holder;
     private ArrayList<Mountain> mountainList;
     private RecyclerViewAdapter adapter;
-
-
-
 
 
     @Override
@@ -54,11 +50,13 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         new JsonTask(this).execute(JSON_URL);
 
     }
+
     @Override
     public void onPostExecute(String json) {
         Log.d("MainActivity", json);
         Gson gson = new Gson();
-        Type type = new TypeToken<List<Mountain>>() {}.getType();
+        Type type = new TypeToken<List<Mountain>>() {
+        }.getType();
         mountainList = gson.fromJson(json, type);
 
 
